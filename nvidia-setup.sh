@@ -12,9 +12,9 @@ echo "开始执行 GPU 环境部署"
 echo "===================================================="
 
 echo "正在停止图形界面服务..."
-systemctl stop gdm3
-systemctl stop gdm
-systemctl stop lightdm
+systemctl stop gdm3 2>/dev/null || true
+systemctl stop gdm 2>/dev/null || true
+systemctl stop lightdm 2>/dev/null || true
 
 # 检查系统版本
 OS_CODENAME=$(lsb_release -cs)
