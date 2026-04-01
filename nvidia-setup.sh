@@ -86,9 +86,9 @@ if ! command -v nvidia-ctk &> /dev/null; then
 fi
 
 echo "安装执行完毕，正在尝试重新启动图形界面..."
-systemctl start gdm3
-systemctl start gdm
-systemctl start lightdm
+systemctl start gdm3 2>/dev/null || true
+systemctl start gdm 2>/dev/null || true
+systemctl start lightdm 2>/dev/null || true
 
 echo "===================================================="
 echo "所有任务已完成！"
